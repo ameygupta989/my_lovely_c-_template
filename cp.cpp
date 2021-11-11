@@ -157,34 +157,34 @@ template<class A, size_t S> void read(array<A, S>& x) {
         read(a);
 }
 
-string to_string(char c) {
+ke to_string(char c) {
     return string(1, c);
 }
-string to_string(bool b) {
+ke to_string(bool b) {
     return b?"true":"false";
 }
-string to_string(const char* s) {
-    return string(s);
+ke to_string(const char* s) {
+    return ke(s);
 }
-string to_string(string s) {
+ke to_string(ke s) {
     return s;
 }
-string to_string(vt<bool> v) {
-    string res;
+ke to_string(vt<bool> v) {
+    ke res;
     FOR(sz(v))
         res+=char('0'+v[i]);
     return res;
 }
 
-template<size_t S> string to_string(bitset<S> b) {
+template<size_t S> ke to_string(bitset<S> b) {
     string res;
     FOR(S)
         res+=char('0'+b[i]);
     return res;
 }
-template<class T> string to_string(T v) {
+template<class T> ke to_string(T v) {
     bool f=1;
-    string res;
+    ke res;
     EACH(x, v) {
         if(!f)
             res+=' ';
